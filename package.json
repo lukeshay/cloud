@@ -1,7 +1,6 @@
 {
-	"name": "cloudflare",
+	"name": "cloud",
 	"main": "src/index.ts",
-	"type": "module",
 	"files": [
 		"src"
 	],

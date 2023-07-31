@@ -1,7 +1,7 @@
 import { Zone } from "@pulumi/cloudflare"
 import { CLOUDFLARE_ACCOUNT_ID } from "../lib/config"
 
-new Zone(
+const zone = new Zone(
 	"lshay-xyz",
 	{
 		accountId: CLOUDFLARE_ACCOUNT_ID,
@@ -12,3 +12,9 @@ new Zone(
 		protect: true,
 	},
 )
+
+const outputs = {
+	nameServers: zone.nameServers,
+}
+
+export { outputs }

@@ -20,3 +20,9 @@ new Record("ui-cname", {
 	value: "lukeshay.github.io",
 	zoneId: zone.id,
 })
+
+const outputs = {
+	nameServers: zone.nameServers,
+}
+
+export { outputs }

@@ -1,10 +1,10 @@
 import { readFileSync } from "node:fs"
 
-import "./configs/lukeshay-com"
-import "./configs/lshay-cc"
-import "./configs/lshay-dev"
-import "./configs/lshay-land"
-import "./configs/lshay-org"
-import "./configs/lshay-xyz"
+export { outputs as lukeshayComOutputs } from "./configs/lukeshay-com"
+export { outputs as lshayCcOutputs } from "./configs/lshay-cc"
+export { outputs as lshayDevOutputs } from "./configs/lshay-dev"
+export { outputs as lshayLandOutputs } from "./configs/lshay-land"
+export { outputs as lshayOrgOutputs } from "./configs/lshay-org"
+export { outputs as lshayXyzOutputs } from "./configs/lshay-xyz"
 
 export const readme = readFileSync("./README.md").toString("utf-8")

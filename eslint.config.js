@@ -1,6 +1,6 @@
-import { createConfig } from "@lshay/eslint-config-flat"
+const { createConfig } = require("@lshay/eslint-config-flat")
 
-export default [
+module.exports = [
 	...createConfig({
 		node: true,
 		parserOptions: {

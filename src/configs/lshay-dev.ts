@@ -38,3 +38,9 @@ new Record("mail-server-txt", {
 	value: "v=spf1 include:spf.privateemail.com ~all",
 	zoneId: zone.id,
 })
+
+const outputs = {
+	nameServers: zone.nameServers,
+}
+
+export { outputs }
