@@ -13,7 +13,7 @@ const zone = new Zone(
 	},
 )
 
-new Record("mail-server-1", {
+new Record("lshay-dev-mail-server-1", {
 	name: "@",
 	priority: 10,
 	proxied: false,
@@ -22,7 +22,7 @@ new Record("mail-server-1", {
 	zoneId: zone.id,
 })
 
-new Record("mail-server-2", {
+new Record("lshay-dev-mail-server-2", {
 	name: "@",
 	priority: 10,
 	proxied: false,
@@ -31,7 +31,7 @@ new Record("mail-server-2", {
 	zoneId: zone.id,
 })
 
-new Record("mail-server-txt", {
+new Record("lshay-dev-mail-server-txt", {
 	name: "@",
 	proxied: false,
 	type: "TXT",
