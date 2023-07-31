@@ -1,3 +1,5 @@
 config:
-    cloudflare:apiToken:
-        secure: AAABAGzGxRdD2Uh6gST5tW8IYIk+OsjLbY3CZ5NK3xePUkUd1ktgb+oRoQs+ISD+se/WU6qsqQeDJWNGo35sbCl0jMtTdD5m
+  cloud:cloudflareAccountId:
+    secure: AAABAHvq5a0fM35Bb/0QpKG0lOiyUe/HeZhR/aWQC5n2EGBDm1QdA/LivloZERojy9lwRa8SXnZCpOWbNfG1vA==
+  cloudflare:apiToken:
+    secure: AAABAGzGxRdD2Uh6gST5tW8IYIk+OsjLbY3CZ5NK3xePUkUd1ktgb+oRoQs+ISD+se/WU6qsqQeDJWNGo35sbCl0jMtTdD5m

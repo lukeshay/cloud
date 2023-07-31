@@ -1,22 +1,22 @@
 name: CD
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 jobs:
-    pulumi-up:
-        name: Pulumi Up
-        runs-on: ubuntu-22.04
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: "16"
-                  cache: "npm"
-            - run: npm ci
-            - uses: pulumi/actions@v3
-              with:
-                  command: up
-                  stack-name: prd
-              env:
-                  PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+  pulumi-up:
+    name: Pulumi Up
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "18"
+          cache: "npm"
+      - run: npm ci
+      - uses: pulumi/actions@v3
+        with:
+          command: up
+          stack-name: prd
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
