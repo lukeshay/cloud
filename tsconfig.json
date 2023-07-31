@@ -10,7 +10,8 @@
 		"pretty": true,
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitReturns": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"noUncheckedIndexedAccess": true
 	},
-	"include": ["src"]
+	"include": ["src", "prettier.config.cjs", "eslint.config.js"]
 }
