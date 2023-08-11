@@ -1,3 +1,8 @@
-/bin/
-/node_modules/
-.env*
+.envrc
+.gen
+.terraform
+*terraform.*.tfstate*
+cdktf.log
+cdktf.out
+node_modules
+tsconfig.tsbuildinfo

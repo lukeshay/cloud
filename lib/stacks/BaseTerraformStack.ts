@@ -1,5 +1,5 @@
 import { CloudflareProvider } from "@cdktf/provider-cloudflare/lib/provider"
-import { TerraformStack } from "cdktf"
+import { S3Backend, TerraformStack } from "cdktf"
 import { Construct } from "constructs"
 
 import { NamecheapProvider } from "../../.gen/providers/namecheap/provider"
@@ -10,6 +10,7 @@ export type BaseTerraformStackProperties = {}
 export class BaseTerraformStack extends TerraformStack {
 	public readonly namecheap: NamecheapProvider
 	public readonly cloudflare: CloudflareProvider
+	public readonly backend: S3Backend
 
 	constructor(
 		scope: Construct,
@@ -27,6 +28,12 @@ export class BaseTerraformStack extends TerraformStack {
 
 		this.cloudflare = new CloudflareProvider(this, "cloudflare", {
 			apiToken: environment.CLOUDFLARE_API_TOKEN,
+		})
+
+		this.backend = new S3Backend(this, {
+			bucket: "lukeshay-cloud-terraform-state",
+			key: `state/${id}`,
+			region: "us-west-2",
 		})
 	}
 }

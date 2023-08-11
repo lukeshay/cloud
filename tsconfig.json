@@ -1,18 +1,28 @@
 {
 	"compilerOptions": {
+		"alwaysStrict": true,
+		"declaration": true,
 		"experimentalDecorators": true,
-		"forceConsistentCasingInFileNames": true,
-		"module": "commonjs",
-		"moduleResolution": "node",
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"lib": ["es2018"],
+		"module": "CommonJS",
+		"noEmitOnError": true,
 		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
 		"noImplicitReturns": true,
-		"noUncheckedIndexedAccess": true,
-		"outDir": "bin",
-		"pretty": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"resolveJsonModule": true,
 		"strict": true,
-		"target": "es2016"
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"stripInternal": true,
+		"target": "ES2018",
+		"incremental": true,
+		"skipLibCheck": true
 	},
-	"include": ["src", "prettier.config.js", "eslint.config.js"]
+	"include": ["**/*.ts"],
+	"exclude": ["node_modules", "cdktf.out"]
 }

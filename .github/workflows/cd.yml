@@ -1,22 +1,27 @@
 name: CD
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  pulumi-up:
-    name: Pulumi Up
+  validate:
+    uses: ./.github/workflows/verify.yml
+  deploy:
+    needs:
+      - validate
     runs-on: ubuntu-22.04
+    environment: production
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::816188110262:role/lukeshay-cloud-terraform-state-ReadWrite
+          aws-region: us-west-2
+      - uses: actions/setup-node@v2
         with:
           node-version: "18"
           cache: "npm"
       - run: npm ci
-      - uses: pulumi/actions@v3
-        with:
-          command: up
-          stack-name: prd
-        env:
-          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+      - run: npm run deploy -- cloudflareZones emailAccounts --auto-approve
