@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-22.04
     environment: production
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::816188110262:role/lukeshay-cloud-terraform-state-ReadWrite
