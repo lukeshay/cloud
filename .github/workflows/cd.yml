@@ -12,9 +12,15 @@ permissions:
 jobs:
   validate:
     uses: ./.github/workflows/verify.yml
+    permissions:
+      contents: read
+      id-token: write
   deploy:
     needs:
       - validate
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-22.04
     environment: production
     steps:

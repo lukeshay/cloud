@@ -4,13 +4,12 @@ on:
   pull_request:
   workflow_call:
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   validate:
     name: ${{ matrix.cmd }}
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-22.04
     environment: production
     strategy:
