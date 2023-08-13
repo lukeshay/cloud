@@ -16,8 +16,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::816188110262:role/lukeshay-cloud-terraform-state-Read
+          role-to-assume: ${{ secrets.AWS_READ_ROLE_ARN }}
           aws-region: us-west-2
+          role-session-name: GitHubActions
       - uses: actions/setup-node@v2
         with:
           node-version: "18"
