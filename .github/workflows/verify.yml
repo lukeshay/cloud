@@ -18,14 +18,14 @@ jobs:
         cmd: [synth, format, build]
     steps:
       - uses: actions/checkout@v3
-      - uses: aws-actions/configure-aws-credentials@main
-        with:
-          role-to-assume: ${{ secrets.AWS_READ_ROLE_ARN }}
-          aws-region: us-west-2
-          role-session-name: GitHubActions
       - uses: actions/setup-node@v2
         with:
           node-version: "18"
           cache: "npm"
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-west-2
+          role-session-name: GitHubActions
+          role-to-assume: ${{ secrets.AWS_READ_ROLE_ARN }}
       - run: npm ci
       - run: npm run ${{ matrix.cmd }}
